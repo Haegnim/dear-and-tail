@@ -3,7 +3,7 @@ $header-line-color: #777;
   // display: flex;
   overflow: hidden;
   height: 100vh;
-  background: #efefef;
+  // background: #efefef;
   // background: #fff;
 }
 .blind {
@@ -49,13 +49,13 @@ header {
       justify-content: space-between;
       padding: 0 10px;
       .user {
-        width: calc(100% - 52px);
+        width: calc(100% - 42px);
         height: 100%;
         border-right: 1px solid $header-line-color;
       }
       .th-line {
-        width: 40px;
-        height: 30px;
+        width: 30px;
+        height: 25px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -71,11 +71,13 @@ header {
     }
     .navigation {
       .nav-button {
-        width: 50%;
+        width: calc(50% - 51px);
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: #efefef;
+
         li {
           width: 20%;
           a {
@@ -84,11 +86,12 @@ header {
             text-align: center;
             padding: 5px 0;
             margin: 10px 10px;
-            transition: all 0.4s;
+            transition: all 0.2s;
             border-radius: 50%;
-            border: 1px solid $header-line-color;
-            font-size: 20px;
+            // border: 1px solid $header-line-color;
+            font-size: 14px;
             font-weight: 300;
+            background: #fff;
             &:hover {
               border: 1px solid red;
               color: red;
@@ -103,10 +106,10 @@ header {
       .nav-search {
         display: flex;
         align-items: center;
-        width: 50%;
+        width: calc(50% + 50px);
         height: 100%;
         border-left: 1px solid $header-line-color;
-        background: #ddd;
+        background: #efefef;
         .inputbox {
           width: 85%;
           display: flex;
@@ -139,27 +142,66 @@ header {
   display: flex;
 
   .main-con {
-    width: calc(50% + 50px);
+    width: 50%;
     height: calc(100vh - 100px);
     border-right: 1px solid $header-line-color;
+
+    .today {
+      .today-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        li {
+          width: 500px;
+          margin: auto;
+          img {
+            width: 100%;
+            object-fit: cover;
+            background: chartreuse;
+          }
+          .textbox {
+            position: absolute;
+            width: 400px;
+            height: 50px;
+            background: #fff;
+            display: flex;
+            border: 1px solid $header-line-color;
+            bottom: 100px;
+            left: calc(50% - 200px);
+
+            h5 {
+              font-size: 20px;
+              text-align: center;
+            }
+            span {
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
   }
   .sub-con {
-    width: calc(50% - 50px);
+    width: 50%;
     height: calc(100vh - 100px);
     .event-banner {
       height: 25%;
-      background: #000;
+      // background: #000;
+      border-bottom: 1px solid $header-line-color;
     }
     .notice {
       height: 5%;
       background: #fff;
+      border-bottom: 1px solid $header-line-color;
     }
     .con-slide {
       height: 70%;
-      background: #777;
+      // background: #777;
       .moreview-click {
         height: 5%;
-        background: #444;
+        // background: #444;
+        border-bottom: 1px solid $header-line-color;
       }
       .con-twobox {
         height: 95%;
@@ -168,7 +210,7 @@ header {
         .cons-box {
           width: 50%;
           height: 100%;
-          background: #444;
+          // background: #444;
           &:nth-child(1) {
             border-right: 1px solid $header-line-color;
           }

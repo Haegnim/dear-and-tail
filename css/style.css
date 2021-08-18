@@ -1,7 +1,6 @@
 .wrap {
   overflow: hidden;
   height: 100vh;
-  background: #efefef;
 }
 
 .blind {
@@ -47,13 +46,13 @@ header nav .nav-user {
   padding: 0 10px;
 }
 header nav .nav-user .user {
-  width: calc(100% - 52px);
+  width: calc(100% - 42px);
   height: 100%;
   border-right: 1px solid #777;
 }
 header nav .nav-user .th-line {
-  width: 40px;
-  height: 30px;
+  width: 30px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,11 +66,12 @@ header nav .nav-user .th-line span:nth-child(2) {
   border-radius: 50%;
 }
 header nav .navigation .nav-button {
-  width: 50%;
+  width: calc(50% - 51px);
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #efefef;
 }
 header nav .navigation .nav-button li {
   width: 20%;
@@ -81,11 +81,11 @@ header nav .navigation .nav-button li a {
   text-align: center;
   padding: 5px 0;
   margin: 10px 10px;
-  transition: all 0.4s;
+  transition: all 0.2s;
   border-radius: 50%;
-  border: 1px solid #777;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300;
+  background: #fff;
 }
 header nav .navigation .nav-button li a:hover {
   border: 1px solid red;
@@ -98,10 +98,10 @@ header nav .navigation .nav-button li a:active {
 header nav .navigation .nav-search {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: calc(50% + 50px);
   height: 100%;
   border-left: 1px solid #777;
-  background: #ddd;
+  background: #efefef;
 }
 header nav .navigation .nav-search .inputbox {
   width: 85%;
@@ -132,29 +132,62 @@ header nav .navigation .nav-search select {
   display: flex;
 }
 .contant .main-con {
-  width: calc(50% + 50px);
+  width: 50%;
   height: calc(100vh - 100px);
   border-right: 1px solid #777;
 }
+.contant .main-con .today .today-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.contant .main-con .today .today-list li {
+  width: 500px;
+  margin: auto;
+}
+.contant .main-con .today .today-list li img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: chartreuse;
+}
+.contant .main-con .today .today-list li .textbox {
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  border: 1px solid #777;
+  bottom: 100px;
+  left: calc(50% - 200px);
+}
+.contant .main-con .today .today-list li .textbox h5 {
+  font-size: 20px;
+  text-align: center;
+}
+.contant .main-con .today .today-list li .textbox span {
+  position: absolute;
+}
 .contant .sub-con {
-  width: calc(50% - 50px);
+  width: 50%;
   height: calc(100vh - 100px);
 }
 .contant .sub-con .event-banner {
   height: 25%;
-  background: #000;
+  border-bottom: 1px solid #777;
 }
 .contant .sub-con .notice {
   height: 5%;
   background: #fff;
+  border-bottom: 1px solid #777;
 }
 .contant .sub-con .con-slide {
   height: 70%;
-  background: #777;
 }
 .contant .sub-con .con-slide .moreview-click {
   height: 5%;
-  background: #444;
+  border-bottom: 1px solid #777;
 }
 .contant .sub-con .con-slide .con-twobox {
   height: 95%;
@@ -164,7 +197,6 @@ header nav .navigation .nav-search select {
 .contant .sub-con .con-slide .con-twobox .cons-box {
   width: 50%;
   height: 100%;
-  background: #444;
 }
 .contant .sub-con .con-slide .con-twobox .cons-box:nth-child(1) {
   border-right: 1px solid #777;
