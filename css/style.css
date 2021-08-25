@@ -17,9 +17,11 @@ header {
   width: 100%;
   height: 100px;
   display: flex;
-  box-shadow: 0 3px 6px #ddd;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid #777;
   overflow: hidden;
+  z-index: 9999;
+  position: relative;
 }
 header .logo {
   display: block;
@@ -49,6 +51,25 @@ header nav .nav-user .user {
   width: calc(100% - 42px);
   height: 100%;
   border-right: 1px solid #777;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+header nav .nav-user .user img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header nav .nav-user .user .login {
+  display: flex;
+  align-items: center;
+}
+header nav .nav-user .user .login p {
+  padding: 0 15px;
+}
+header nav .nav-user .user .login img {
+  border-radius: 50%;
 }
 header nav .nav-user .th-line {
   width: 30px;
@@ -66,12 +87,13 @@ header nav .nav-user .th-line span:nth-child(2) {
   border-radius: 50%;
 }
 header nav .navigation .nav-button {
-  width: calc(50% - 51px);
+  width: calc(50% - 52px);
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #efefef;
+  padding: 0 10px;
 }
 header nav .navigation .nav-button li {
   width: 20%;
@@ -79,8 +101,8 @@ header nav .navigation .nav-button li {
 header nav .navigation .nav-button li a {
   display: block;
   text-align: center;
-  padding: 5px 0;
-  margin: 10px 10px;
+  padding: 9px 0;
+  margin: 10px 15px;
   transition: all 0.2s;
   border-radius: 50%;
   font-size: 14px;
@@ -88,8 +110,8 @@ header nav .navigation .nav-button li a {
   background: #fff;
 }
 header nav .navigation .nav-button li a:hover {
-  border: 1px solid red;
-  color: red;
+  color: #fff;
+  background: red;
 }
 header nav .navigation .nav-button li a:active {
   color: #fff;
@@ -116,12 +138,13 @@ header nav .navigation .nav-search .inputbox input {
   margin: 5px 20px;
   border-radius: 20px;
   border: 1px solid #777;
+  background: #fff;
 }
-header nav .navigation .nav-search .inputbox strong {
+header nav .navigation .nav-search .inputbox b {
   font-size: 42px;
   padding: 0 5px;
   margin-right: 15px;
-  font-weight: 300;
+  font-weight: 100;
 }
 header nav .navigation .nav-search select {
   border: none;
@@ -133,54 +156,123 @@ header nav .navigation .nav-search select {
 }
 .contant .main-con {
   width: 50%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 140px);
   border-right: 1px solid #777;
+}
+.contant .main-con .today {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.contant .main-con .today > button {
+  padding: 10px 0;
+  height: 30px;
+  width: 50px;
+}
+.contant .main-con .today .con-box {
+  width: 100%;
+  padding: 30px 0 20px;
 }
 .contant .main-con .today .today-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 .contant .main-con .today .today-list li {
-  width: 500px;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .contant .main-con .today .today-list li img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  background: chartreuse;
+}
+.contant .main-con .today .today-list li .backimg {
+  margin: 0 auto;
+  width: 53%;
+  height: 50%;
+  position: relative;
+}
+.contant .main-con .today .today-list li .backimg .hot {
+  top: 0;
+  left: -35px;
+}
+.contant .main-con .today .today-list li .backimg .hot:nth-child(2) {
+  top: 45px;
 }
 .contant .main-con .today .today-list li .textbox {
   position: absolute;
-  width: 400px;
+  width: 90%;
   height: 50px;
   background: #fff;
   display: flex;
   border: 1px solid #777;
-  bottom: 100px;
-  left: calc(50% - 200px);
+  bottom: -20px;
+  left: calc(50% - 45%);
+  margin: 0 auto;
 }
 .contant .main-con .today .today-list li .textbox h5 {
   font-size: 20px;
   text-align: center;
+  width: 100%;
+  padding: 10px 0;
 }
 .contant .main-con .today .today-list li .textbox span {
   position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-family: Georgia, sans-serif;
+  font-style: italic;
+}
+.contant .main-con .today .today-list li b {
+  padding-top: 30px;
+  display: block;
+  width: 100%;
+  font-size: 45px;
+  text-align: center;
 }
 .contant .sub-con {
   width: 50%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 140px);
+}
+.contant .sub-con .latin {
+  font-family: Georgia, sans-serif;
+  font-style: italic;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #008845;
 }
 .contant .sub-con .event-banner {
   height: 25%;
   border-bottom: 1px solid #777;
+  position: relative;
+}
+.contant .sub-con .event-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contant .sub-con .notice {
   height: 5%;
-  background: #fff;
+  background: #efefef;
   border-bottom: 1px solid #777;
+  position: relative;
+}
+.contant .sub-con .notice p {
+  text-align: center;
+  padding: 10px 0;
 }
 .contant .sub-con .con-slide {
   height: 70%;
@@ -188,16 +280,139 @@ header nav .navigation .nav-search select {
 .contant .sub-con .con-slide .moreview-click {
   height: 5%;
   border-bottom: 1px solid #777;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+.contant .sub-con .con-slide .moreview-click p {
+  text-align: center;
+  padding: 3px 0;
+  font-weight: 100;
+  color: #0012ff;
 }
 .contant .sub-con .con-slide .con-twobox {
   height: 95%;
-  background: #efeffe;
+  background: #f2f2f2;
   display: flex;
 }
 .contant .sub-con .con-slide .con-twobox .cons-box {
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 .contant .sub-con .con-slide .con-twobox .cons-box:nth-child(1) {
   border-right: 1px solid #777;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .title {
+  height: 50px;
+  width: 100%;
+  background: #efefef;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 50px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .title p {
+  font-weight: 100;
+  font-size: 19px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .title > span {
+  padding: 9px 30px;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .title .move-dot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .title .move-dot span {
+  background: #333;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px 10px;
+  height: calc(100% - 50px);
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img span {
+  top: 10px;
+  left: 0px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img .img-box {
+  height: 77%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img .img-box::before {
+  content: "";
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 40%);
+  z-index: 1;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img .img-box img {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img h5 {
+  position: relative;
+  z-index: 9;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  padding: 4px 0;
+  margin-bottom: 4px;
+}
+.contant .sub-con .con-slide .con-twobox .cons-box .sub-con-img em {
+  position: relative;
+  z-index: 9;
+  font-family: Georgia, sans-serif;
+  font-style: italic;
+}
+
+.hot {
+  position: absolute;
+  width: 70px;
+  height: 45px;
+  background: crimson;
+  color: #fff;
+  padding: 14px;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 2;
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer i.fa {
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
 }
