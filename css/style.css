@@ -16,12 +16,13 @@
 header {
   width: 100%;
   height: 100px;
-  display: flex;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid #777;
   overflow: hidden;
   z-index: 9999;
   position: relative;
+}
+header .center {
+  display: flex;
 }
 header .logo {
   display: block;
@@ -45,7 +46,6 @@ header nav .nav-user {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
 }
 header nav .nav-user .user {
   width: calc(100% - 42px);
@@ -72,19 +72,52 @@ header nav .nav-user .user .login img {
   border-radius: 50%;
 }
 header nav .nav-user .th-line {
-  width: 30px;
+  width: 50px;
   height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 0 10px;
+  position: relative;
+}
+header nav .nav-user .th-line.on {
+  width: 50px;
+  height: 50px;
+  padding: 0 5px;
+}
+header nav .nav-user .th-line.on span:nth-child(1) {
+  z-index: 9;
+  transform: rotate(45deg) translateY(0);
+  background: #fff;
+}
+header nav .nav-user .th-line.on span:nth-child(3) {
+  background: #fff;
+  transform: rotate(-45deg) translateY(0);
+}
+header nav .nav-user .th-line.on span:nth-child(2) {
+  border-radius: 50%;
+  transform: scaleY(100%);
 }
 header nav .nav-user .th-line span {
-  width: 100%;
+  display: block;
+  width: 36px;
   height: 2px;
-  background: #000;
+  background: #0fc495;
+  transition: all 0.4s;
+  position: absolute;
+  left: 8px;
+}
+header nav .nav-user .th-line span:nth-child(1) {
+  top: calc(50% - 1px);
+  transform: translateY(-10px);
 }
 header nav .nav-user .th-line span:nth-child(2) {
   border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  transform: scaleY(5%);
+  top: calc(50% - 18px);
+}
+header nav .nav-user .th-line span:nth-child(3) {
+  top: calc(50% - 1px);
+  transform: translateY(10px);
 }
 header nav .navigation .nav-button {
   width: calc(50% - 52px);
@@ -111,11 +144,11 @@ header nav .navigation .nav-button li a {
 }
 header nav .navigation .nav-button li a:hover {
   color: #fff;
-  background: red;
+  background: #0fc495;
 }
-header nav .navigation .nav-button li a:active {
+header nav .navigation .nav-button li a.active {
   color: #fff;
-  background: red;
+  background: #0fc495;
 }
 header nav .navigation .nav-search {
   display: flex;
@@ -137,7 +170,6 @@ header nav .navigation .nav-search .inputbox input {
   padding: 10px;
   margin: 5px 20px;
   border-radius: 20px;
-  border: 1px solid #777;
   background: #fff;
 }
 header nav .navigation .nav-search .inputbox b {
@@ -146,13 +178,24 @@ header nav .navigation .nav-search .inputbox b {
   margin-right: 15px;
   font-weight: 100;
 }
-header nav .navigation .nav-search select {
+header nav .navigation .nav-search .cate {
   border: none;
   height: 100%;
+  width: 15%;
+  text-align: center;
+  padding: 0 30px;
 }
 
 .contant {
   display: flex;
+}
+.contant .pre {
+  background: url(/dearandtail/icon/up.svg) no-repeat center center;
+  background-size: contain;
+}
+.contant .nex {
+  background: url(/dearandtail/icon/down.svg) no-repeat center center;
+  background-size: contain;
 }
 .contant .main-con {
   width: 50%;
@@ -176,6 +219,7 @@ header nav .navigation .nav-search select {
 .contant .main-con .today .con-box {
   width: 100%;
   padding: 30px 0 20px;
+  overflow: hidden;
 }
 .contant .main-con .today .today-list {
   display: flex;
@@ -183,10 +227,11 @@ header nav .navigation .nav-search select {
   justify-content: center;
   position: relative;
   width: 100%;
+  transition: all 0.4s;
 }
 .contant .main-con .today .today-list li {
   width: 100%;
-  height: 100%;
+  height: 71vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,8 +244,8 @@ header nav .navigation .nav-search select {
 }
 .contant .main-con .today .today-list li .backimg {
   margin: 0 auto;
-  width: 53%;
-  height: 50%;
+  width: 500px;
+  height: 500px;
   position: relative;
 }
 .contant .main-con .today .today-list li .backimg .hot {
@@ -216,7 +261,7 @@ header nav .navigation .nav-search select {
   height: 50px;
   background: #fff;
   display: flex;
-  border: 1px solid #777;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   bottom: -20px;
   left: calc(50% - 45%);
   margin: 0 auto;
@@ -251,7 +296,7 @@ header nav .navigation .nav-search select {
   position: absolute;
   top: 8px;
   left: 8px;
-  color: #008845;
+  color: #0fc495;
 }
 .contant .sub-con .event-banner {
   height: 25%;
@@ -288,15 +333,23 @@ header nav .navigation .nav-search select {
   text-align: center;
   padding: 3px 0;
   font-weight: 100;
-  color: #0012ff;
+  color: #0fc495;
 }
 .contant .sub-con .con-slide .con-twobox {
+  background: #efefef;
   height: 95%;
-  background: #f2f2f2;
+  overflow: hidden;
+}
+.contant .sub-con .con-slide .con-twobox .con-list {
   display: flex;
+  position: relative;
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.4s;
 }
 .contant .sub-con .con-slide .con-twobox .cons-box {
-  width: 50%;
   height: 100%;
   overflow: hidden;
 }
@@ -306,7 +359,6 @@ header nav .navigation .nav-search select {
 .contant .sub-con .con-slide .con-twobox .cons-box .title {
   height: 50px;
   width: 100%;
-  background: #efefef;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-around;
@@ -395,7 +447,7 @@ header nav .navigation .nav-search select {
   position: absolute;
   width: 70px;
   height: 45px;
-  background: crimson;
+  background: #ff635c;
   color: #fff;
   padding: 14px;
   border-radius: 50%;
@@ -407,9 +459,12 @@ footer {
   width: 100%;
   height: 40px;
   background: #333;
+}
+footer .center {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 0;
 }
 footer i.fa {
   color: #fff;
