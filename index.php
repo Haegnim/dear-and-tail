@@ -292,12 +292,44 @@
           </div>
         </div>
       </section>
+      <section id="login">
+        <form action="/dearandtail/php/login.php" name="login_form" method="post" name="mem_form"
+          class="login_form com_form">
+
+          <input type="text" name="login_id" id="mem_id" placeholder="아이디" ">
+
+            <input type=" new-password" name="login_pass" autocomplete="off" placeholder="비밀번호">
+
+
+          <div class="submit_info">
+            <button type="button" id="login_btn">로그인</button>
+            <span>회원이 아니신가요? <a href="/dearandtail/pages/join/join_form.php">click</a></span>
+          </div>
+        </form>
+
+      </section>
     </main>
     <?php
       include $_SERVER["DOCUMENT_ROOT"]."/dearandtail/include/footer.php";  
       ?>
   </div>
+  <script>
+  const loginBtn = document.querySelector("#login_btn");
 
+  loginBtn.addEventListener('click', function() {
+    if (!document.login_form.login_id.value) {
+      alert('아이디를 입력해 주세요');
+      document.login_form.login_id.focus();
+      return;
+    }
+    if (!document.login_form.login_pass.value) {
+      alert('비밀번호를 입력해 주세요');
+      document.login_form.login_pass.focus();
+      return;
+    }
+    document.login_form.submit();
+  });
+  </script>
   <script src="/dearandtail/js/main.js"></script>
 </body>
 

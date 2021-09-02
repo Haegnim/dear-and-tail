@@ -87,14 +87,3 @@ function consBoxSlide(offset) {
 //   }
 // }
 // navClick();
-
-function hambergerClick() {
-  const hamberger = document.querySelector(".th-line");
-  // const tabnav = document.querySelector(".hide-nav");
-
-  hamberger.addEventListener("click", function () {
-    // tabnav.classList.toggle("on");
-    hamberger.classList.toggle("on");
-  });
-}
-hambergerClick();

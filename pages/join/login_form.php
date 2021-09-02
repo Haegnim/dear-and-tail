@@ -105,23 +105,7 @@
           <button class="nex"></button>
         </div>
       </section>
-      <section id="login">
-        <form action="/dearandtail/php/login.php" name="login_form" method="post" name="mem_form"
-          class="login_form com_form">
-          <p class="login">
-            <label for="mem_id">아이디</label><input type="text" name="login_id" id="mem_id" placeholder="아이디" ">
-          </p>
-          <p>
-            <label>비밀번호</label><input type=" new-password" name="login_pass" autocomplete="off" placeholder="비밀번호">
-          </p>
 
-          <div class="submit_info">
-            <button type="button" id="login_btn">로그인</button>
-            <span>회원이 아니신가요? <a href="/dearandtail/pages/join/join_form.php">click</a></span>
-          </div>
-        </form>
-
-      </section>
     </main>
     <?php
       include $_SERVER["DOCUMENT_ROOT"]."/dearandtail/include/footer.php";  

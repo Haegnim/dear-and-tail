@@ -1,3 +1,33 @@
+<?php
+      session_start();
+      
+      if(isset($_SESSION['useridx'])){
+        $useridx = $_SESSION['useridx'];
+      }else{
+        $useridx = "";
+      }
+
+      if(isset($_SESSION['userid'])){
+        $userid = $_SESSION['userid'];
+      }else{
+        $userid = "";
+      }
+      
+      if(isset($_SESSION['userprofile'])){
+        $userprofile = $_SESSION['userprofile'];
+      }else{
+        $userprofile = "";
+      }
+      
+      if(isset($_SESSION['userlevel'])){
+        $userlevel = $_SESSION['userlevel'];
+      }else{
+        $userlevel = "";
+      }
+
+    // echo $userprofile, $userid;
+    ?>
+
 <header>
   <div class="center">
     <span class="logo"></span>
@@ -8,9 +38,30 @@
             <img src="/dearandtail/img/type.png" alt="" />
           </div>
           <div class="login">
+            <?php if(!$userid){ ?>
+            <!-- 로그아웃 시 보여질 UI -->
             <a href="/dearandtail/pages/join/join_form.php">join</a>
             <a href="/dearandtail/pages/join/login_form.php">login</a>
-            <img src="/dearandtail/img/test.jpg" alt="" />
+            <a href="#"><img src="#" alt=""></a>
+            <?php }else{ 
+            if($userlevel == 1){       
+        ?>
+            <!-- 로그인 시 보여질 UI -->
+            <a href="/dearandtail/php/logout.php">logout</a>
+            <a href="#"><?=$userid?></a>
+            <a href="/zay/pages/admin/admin.php" class="admin_link"><i class="fa fa-cog"></i></a>
+            <?php }else{ ?>
+
+            <!-- 로그인 시 보여질 UI -->
+            <a href="/dearandtail/php/logout.php">logoout</a>
+            <a href="#"><?=$userid?></a>
+            <a href="#"><img src="#" alt=""></a>
+
+            <?php }} ?>
+            <!-- <a href="/dearandtail/pages/join/join_form.php">logoout</a>
+            <a href="/dearandtail/pages/join/join_form.php">join</a>
+            <a href="/dearandtail/pages/join/login_form.php">login</a>
+            <img src="/dearandtail/img/test.jpg" alt="" /> -->
           </div>
         </div>
         <div class="th-line">

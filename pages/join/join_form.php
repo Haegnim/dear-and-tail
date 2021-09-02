@@ -22,43 +22,44 @@
   <div class="wrap" id="join">
 
     <section>
-      <h4>Login</h4>
+      <h4>Join</h4>
       <div class="form_box">
 
-        <form action="/dearandtail/php/insert_mem.php" method="post" name="mem_form" enctype="multipart/form-data"
+        <form action="/dearandtail/php/join.php" method="post" name="mem_form" enctype="multipart/form-data"
           class="mem_form com_form">
           <div class="join-box">
             <button type="button" class="next-btn">NEXT</button>
-
             <ul class="join-input">
-              <li class="id-input">
-                <input type="text" name="mem_id" id="mem_id" placeholder="아이디" id="mem_id">
-                <button type="button" class="id_check">0</button>
+              <li>
+                <div class="dup-check">
+                  <input type="text" name="mem_email" placeholder="이메일">
+                  <button type="button" class="id_check">0</button>
+                </div>
               </li>
               <li>
+                <div class="dup-check">
+                  <input type="text" name="mem_id" id="mem_id" placeholder="아이디" id="mem_id">
+                  <button type="button" class="id_check">0</button>
+                </div>
                 <input type="new-password" name="mem_pass" autocomplete="off" placeholder="비밀번호">
                 <input type="new-password" name="mem_pass_check" placeholder="비밀번호 확인">
               </li>
               <li>
-                <input type="text" name="mem_email" placeholder="이메일">
-              </li>
-              <li>
                 <input type="text" name="mem_name" placeholder="이름">
-                <input type="file" name="mem_pf">
               </li>
             </ul>
           </div>
           <div class="submit_info">
             <button type="button" id="submit_btn">회원가입</button>
-            <span>회원이신가요? <a href="/zay/pages/join/login_form.php">click</a></span>
+            <span>회원이신가요? <a href="/dearandtail/pages/join/login_form.php">click</a></span>
           </div>
         </form>
       </div>
     </section>
+    <script src="/dearandtail/js/join.js"></script>
 
   </div>
 
-  <script src="/dearandtail/js/main.js"></script>
 </body>
 
 </html>
