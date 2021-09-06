@@ -42,7 +42,7 @@
             <!-- 로그아웃 시 보여질 UI -->
             <a href="/dearandtail/pages/join/join_form.php">join</a>
             <a href="/dearandtail/pages/join/login_form.php">login</a>
-            <a href="#"><img src="#" alt=""></a>
+            <img src="/dearandtail/img/test.jpg" alt="">
             <?php }else{ 
             if($userlevel == 1){       
         ?>
@@ -55,7 +55,7 @@
             <!-- 로그인 시 보여질 UI -->
             <a href="/dearandtail/php/logout.php">logoout</a>
             <a href="#"><?=$userid?></a>
-            <a href="#"><img src="#" alt=""></a>
+            <img src="/dearandtail/img/test.jpg" alt="">
 
             <?php }} ?>
             <!-- <a href="/dearandtail/pages/join/join_form.php">logoout</a>
