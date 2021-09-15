@@ -41,7 +41,7 @@
             <?php if(!$userid){ ?>
             <!-- 로그아웃 시 보여질 UI -->
             <a href="/dearandtail/pages/join/join_form.php">join</a>
-            <a href="/dearandtail/pages/join/login_form.php">login</a>
+            <a href="#" class="login">login</a>
             <img src="/dearandtail/img/test.jpg" alt="">
             <?php }else{ 
             if($userlevel == 1){       

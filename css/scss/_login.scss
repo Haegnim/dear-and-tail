@@ -1,8 +1,10 @@
-#login {
+.loginpage {
   width: 50%;
   height: calc(100vh - 140px);
   // transform: translateX(100%);
-  display: none;
+  &.on {
+    display: none;
+  }
 
   input {
     background: #efefef;

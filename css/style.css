@@ -1,6 +1,6 @@
 .wrap {
   overflow: hidden;
-  height: 100vh;
+  height: 600vh;
 }
 
 .blind {
@@ -191,6 +191,7 @@ header nav .navigation .nav-search .cate {
 
 .contant {
   display: flex;
+  height: 100vh;
 }
 .contant .pre {
   background: url(/dearandtail/icon/up.svg) no-repeat center center;
@@ -293,6 +294,9 @@ header nav .navigation .nav-search .cate {
 .sub-con {
   width: 50%;
   height: calc(100vh - 140px);
+}
+.sub-con.on {
+  display: none;
 }
 .sub-con .latin {
   font-family: Georgia, sans-serif;
@@ -541,18 +545,20 @@ input {
   left: calc(50% - 70px);
 }
 
-#login {
+.loginpage {
   width: 50%;
   height: calc(100vh - 140px);
+}
+.loginpage.on {
   display: none;
 }
-#login input {
+.loginpage input {
   background: #efefef;
   width: 50%;
   border-radius: 20px;
   margin-bottom: 20px;
 }
-#login form {
+.loginpage form {
   margin: 0 auto;
   width: 600px;
   height: 100%;

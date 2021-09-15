@@ -292,7 +292,7 @@
           </div>
         </div>
       </section>
-      <section id="login">
+      <section class="loginpage on">
         <form action="/dearandtail/php/login.php" name="login_form" method="post" name="mem_form"
           class="login_form com_form">
 

@@ -97,3 +97,15 @@ function hambergerClick() {
   });
 }
 hambergerClick();
+
+function showloginpage() {
+  const login = document.querySelector(".login");
+  const subcon = document.querySelector(".sub-con");
+  const loginpage = document.querySelector(".loginpage");
+
+  login.addEventListener("click", function () {
+    loginpage.classList.toggle("on");
+    subcon.classList.toggle("on");
+  });
+}
+showloginpage();
