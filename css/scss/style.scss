@@ -8,7 +8,7 @@ $font-color: $green;
 .wrap {
   // display: flex;
   overflow: hidden;
-  height: 600vh;
+  height: 100vh;
   // background: #efefef;
   // background: #fff;
 }
@@ -27,7 +27,7 @@ $font-color: $green;
 
 .contant {
   display: flex;
-  height: 100vh;
+  // height: 100vh;
   .pre {
     background: url(/dearandtail/icon/up.svg) no-repeat center center;
     background-size: contain;

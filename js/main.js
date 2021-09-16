@@ -15,13 +15,24 @@ function mainconClick() {
 }
 mainconClick();
 
+function mainconH() {
+  const todaycard = document.querySelectorAll(".card");
+  const conBox = document.querySelector(".con-box");
+  const conBoxX = conBox.offsetHeight;
+  for (let i = 0; i < todaycard.length; i++) {
+    todaycard[i].style.height = conBoxX + "px";
+    const cardX = todaycard[0].offsetHeight;
+    console.log(cardX);
+  }
+}
+mainconH();
 function mainconSlide(offset) {
   const todaycard = document.querySelectorAll(".card");
-  const cardX = todaycard[0].offsetHeight;
+  const conBox = document.querySelector(".con-box");
+  const conBoxX = conBox.offsetHeight;
   const todayList = document.querySelector(".today-list");
   const movepoint = offset % todaycard.length;
-
-  todayList.style.transform = `translateY(${cardX * movepoint}px)`;
+  todayList.style.transform = `translateY(${conBoxX * movepoint}px)`;
   navActive(movepoint);
 }
 
